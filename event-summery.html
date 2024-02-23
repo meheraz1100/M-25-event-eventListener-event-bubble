@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM summery</title>
+</head>
+<body>
+    <h1>Final DOM Event Handlers</h1>
+    <h3 id="handlers-status">Default Text</h3>
+    <p id="input-text">Default input text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+    <br><br>
+    <button onclick="handleOnClick()">Handle Event by add onclick function</button>
+    <button id="event-listener">Handled event by addEventListener</button>
+    <script>
+        // option - 1
+        function handleOnClick(){
+            const handlersStatus = document.getElementById('handlers-status');
+            handlersStatus.innerText = 'Event handled by add onclick function';
+        }
+
+        // option -2 
+        document.getElementById('event-listener').addEventListener('click', function(){
+            const handlersStatus = document.getElementById('handlers-status');
+            handlersStatus.innerText = 'Event handled by addEventListener';
+        })
+
+        //option - 2 recap
+        document.getElementById('btn-update').addEventListener('click', function(){
+            const inputField = document.getElementById('input-field');
+            const inputText = inputField.value;
+
+            const p = document.getElementById('input-text');
+            p.innerText = inputText;
+            inputField.value = '';
+        })
+    </script>
+</body>
+</html>
