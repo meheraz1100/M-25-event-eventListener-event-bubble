@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>js dom events</title>
-</head>
-<body>
-    <h1 onclick="console.log('heo')">DOM ar ajke special event</h1>
-    <button title="this is tooltip" onclick="console.log('hello this is click events')">Click Me</button>
+  </head>
+  <body>
+    <h1 onclick="console.log('hello')">DOM ar ajke special event</h1>
+    <button
+      title="this is tooltip"
+      onclick="console.log('hello this is click events')"
+    >
+      Click Me
+    </button>
     <button onclick="console.log(65)">Another Btn</button>
+    <br />
+    <br />
+    <button onclick="document.body.style.backgroundColor = 'yellow'">
+      Make yellow
+    </button>
+    <button onclick="document.body.style.backgroundColor = 'white'">
+      Make white
+    </button>
+    <button onclick="document.body.style.backgroundColor = 'black'">
+      Make black
+    </button>
+    <!-- option - 1 -->
+    <button onclick="makeRed()">Make red</button>
+    <button id="make-blue">Make blue</button>
+    <button id="make-purple">Make purple</button>
+    <!-- option - 4 -->
+    <button id="make-pink">Make pink</button>
+    <button id="make-green">Make green</button>
+    <button id="make-goldenrod">Make Goldenrod</button>
     <script src="js/events.js"></script>
-</body>
+    <script>
+      document.getElementById("make-goldenrod").addEventListener("click", function makeGoldenrod() {
+          document.body.style.backgroundColor = "goldenrod";
+        });
+    </script>
+  </body>
 </html>
